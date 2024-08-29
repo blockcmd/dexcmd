@@ -1,3 +1,4 @@
+import LpPositionTracker from "@/components/lp-position-tracker";
 import RangeCalculator from "@/components/range-calculator";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
         dexCMD
       </h1>
       <RangeCalculator />
+      <LpPositionTracker />
     </div>
   );
 }

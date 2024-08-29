@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="text-sm text-muted-foreground text-center">BlockCMD is built by <a href="https://twitter.com/zxstim" className="text-blue-400 underline underline-offset-2">zxstim</a> and contributors</div>
+      <div className="text-sm text-muted-foreground text-center">dexCMD is built by <a href="https://www.blockcmd.com" target='_blank' className="text-blue-400 underline underline-offset-2">BlockCMD</a> and contributors</div>
     </footer>
   )
 }

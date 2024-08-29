@@ -18,6 +18,10 @@ export default function LpPositionTracker() {
   const [finalPriceTokenB, setFinalPriceTokenB] = useState("");
   const [collectedFees, setCollectedFees] = useState("");
   const [collectedRewards, setCollectedRewards] = useState("");
+  const [positionValueInTokenA, setPositionValueInTokenA] = useState("");
+  const [positionValueInTokenB, setPositionValueInTokenB] = useState("");
+  const [positionValueIn50_50, setPositionValueIn50_50] = useState("");
+  const [currentValueOfPosition, setCurrentValueOfPosition] = useState("");
 
   function handleInputEntryPriceChange(e: React.ChangeEvent<HTMLInputElement>) {
     setEntryPrice(e.target.value);
@@ -86,7 +90,7 @@ export default function LpPositionTracker() {
           id="currentPrice"
           placeholder="price"
           className="w-[300px] rounded-none"
-          value={currentPrice}
+          value={upperBoundPrice}
           onChange={handleInputUpperBoundPriceChange}
         />
       </div>
@@ -96,10 +100,11 @@ export default function LpPositionTracker() {
           id="currentPrice"
           placeholder="price"
           className="w-[300px] rounded-none"
-          value={currentPrice}
+          value={lowerBoundPrice}
           onChange={handleInputLowerBoundPriceChange}
         />
       </div>
+      <hr />
       <h3>Token A</h3>
       <div className="grid w-full max-w-sm items-center gap-1.5">
         <Label htmlFor="currentPrice">Initial amount</Label>
@@ -107,7 +112,7 @@ export default function LpPositionTracker() {
           id="currentPrice"
           placeholder="price"
           className="w-[300px] rounded-none"
-          value={currentPrice}
+          value={depositedAmountTokenA}
           onChange={handleInputDepositedAmountTokenAChange}
         />
       </div>
@@ -117,7 +122,7 @@ export default function LpPositionTracker() {
           id="currentPrice"
           placeholder="price"
           className="w-[300px] rounded-none"
-          value={currentPrice}
+          value={initialPriceTokenA}
           onChange={handleInputInitialPriceTokenAChange}
         />
       </div>
@@ -127,10 +132,11 @@ export default function LpPositionTracker() {
           id="currentPrice"
           placeholder="price"
           className="w-[300px] rounded-none"
-          value={currentPrice}
+          value={finalPriceTokenA}
           onChange={handleInputFinalPriceTokenAChange}
         />
       </div>
+      <hr />
       <h3>Token B</h3>
       <div className="grid w-full max-w-sm items-center gap-1.5">
         <Label htmlFor="currentPrice">Initial amount</Label>
@@ -138,7 +144,7 @@ export default function LpPositionTracker() {
           id="currentPrice"
           placeholder="price"
           className="w-[300px] rounded-none"
-          value={currentPrice}
+          value={depositedAmountTokenB}
           onChange={handleInputDepositedAmountTokenBChange}
         />
       </div>
@@ -148,7 +154,7 @@ export default function LpPositionTracker() {
           id="currentPrice"
           placeholder="price"
           className="w-[300px] rounded-none"
-          value={currentPrice}
+          value={initialPriceTokenB}
           onChange={handleInputInitialPriceTokenBChange}
         />
       </div>
@@ -158,7 +164,7 @@ export default function LpPositionTracker() {
           id="currentPrice"
           placeholder="price"
           className="w-[300px] rounded-none"
-          value={currentPrice}
+          value={finalPriceTokenB}
           onChange={handleInputFinalPriceTokenBChange}
         />
       </div>
@@ -169,7 +175,7 @@ export default function LpPositionTracker() {
           id="currentPrice"
           placeholder="price"
           className="w-[300px] rounded-none"
-          value={currentPrice}
+          value={collectedFees}
           onChange={handleInputCollectedFeesChange}
         />
       </div>
@@ -180,41 +186,35 @@ export default function LpPositionTracker() {
           id="currentPrice"
           placeholder="price"
           className="w-[300px] rounded-none"
-          value={currentPrice}
+          value={collectedRewards}
           onChange={handleInputCollectedRewardsChange}
         />
       </div>
       <h3>Value of position if held all in Token A</h3>
       <div className="grid w-full max-w-sm items-center gap-1.5">
-        <Label htmlFor="currentPrice">Collected rewards</Label>
+        <Label htmlFor="currentPrice">Value</Label>
         <Input
           id="currentPrice"
-          placeholder="price"
           className="w-[300px] rounded-none"
-          value={currentPrice}
-          onChange={handleInputCollectedRewardsChange}
+          value={positionValueInTokenA}
         />
       </div>
       <h3>Value of position of held in 50/50 split</h3>
       <div className="grid w-full max-w-sm items-center gap-1.5">
-        <Label htmlFor="currentPrice">Collected rewards</Label>
+        <Label htmlFor="currentPrice">Value</Label>
         <Input
           id="currentPrice"
-          placeholder="price"
           className="w-[300px] rounded-none"
-          value={currentPrice}
-          onChange={handleInputCollectedRewardsChange}
+          value={positionValueIn50_50}
         />
       </div>
       <h3>Current value of position</h3>
       <div className="grid w-full max-w-sm items-center gap-1.5">
-        <Label htmlFor="currentPrice">Collected rewards</Label>
+        <Label htmlFor="currentPrice">Value</Label>
         <Input
           id="currentPrice"
-          placeholder="price"
           className="w-[300px] rounded-none"
-          value={currentPrice}
-          onChange={handleInputCollectedRewardsChange}
+          value={currentValueOfPosition}
         />
       </div>
     </div>

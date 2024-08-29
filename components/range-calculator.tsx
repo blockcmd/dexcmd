@@ -40,45 +40,54 @@ export default function RangeCalculator() {
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <h1>dexCMD</h1>
+    <div className="flex flex-col gap-4 border-2 border-primary p-4 w-fit">
+      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">Range Calculator</h2>
       <div className="grid w-full max-w-sm items-center gap-1.5">
-        <Label htmlFor="email">Current price</Label>
+        <Label htmlFor="currentPrice">Current price</Label>
         <Input
+          id="currentPrice"
           placeholder="price"
-          className="w-[200px]"
+          className="w-[300px] rounded-none"
           value={currentPrice}
           onChange={handleInputCurrentPriceChange}
         />
       </div>
       <div className="grid w-full max-w-sm items-center gap-1.5">
-        <Label htmlFor="email">Lower bound percent</Label>
-        <Input
-          placeholder="%"
-          className="w-[200px]"
-          onChange={handleInputLowerBoundChange}
-          value={lowerBound}
-        />
-      </div>
-      <Input
-        placeholder="Lower bound price"
-        className="w-[200px]"
-        value={lowerBoundPrice}
-      />
-      <div className="grid w-full max-w-sm items-center gap-1.5">
         <Label htmlFor="email">Upper bound percent</Label>
         <Input
           placeholder="%"
-          className="w-[200px]"
+          className="w-[300px] rounded-none"
           onChange={handleInputUpperBoundChange}
           value={upperBound}
         />
       </div>
-      <Input
-        placeholder="Upper bound price"
-        className="w-[200px]"
-        value={upperBoundPrice}
-      />
+      <div className="grid w-full max-w-sm items-center gap-1.5">
+        <Label htmlFor="email">Upper bound price</Label>
+        <Input
+          placeholder="Upper bound price"
+          className="w-[300px] rounded-none"
+          value={upperBoundPrice}
+        />
+      </div>
+      <div className="grid w-full max-w-sm items-center gap-1.5">
+        <Label htmlFor="lowerBoundPercent">Lower bound percent</Label>
+        <Input
+          id="lowerBoundPercent"
+          placeholder="%"
+          className="w-[300px] rounded-none"
+          onChange={handleInputLowerBoundChange}
+          value={lowerBound}
+        />
+      </div>
+      <div className="grid w-full max-w-sm items-center gap-1.5">
+        <Label htmlFor="lowerBoundPrice">Lower bound price</Label>
+        <Input
+          id="lowerBoundPrice"
+          placeholder="Lower bound price"
+          className="w-[300px] rounded-none"
+          value={lowerBoundPrice}
+        />
+      </div>
       <div className="items-top flex space-x-2">
         <Checkbox
           id="terms"
